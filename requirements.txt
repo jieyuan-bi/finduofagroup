@@ -1,0 +1,9 @@
+Django==3.2.4
+mysqlclient==2.0.3
+djangorestframework==3.12.4
+pillow==8.2.0
+django-cors-headers==3.7.0
+djoser
+mechanicalsoup
+djangorestframework-simplejwt
+passlib==1.7.4

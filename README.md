@@ -1,24 +1,46 @@
 # findclassmate
 
 #### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+{}
 
 #### 软件架构
-软件架构说明
-
+front-end: vue
+back-end: django
+database: mysql
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  (intall requirements) pip install -r requirements.txt
+2.  
+
+#### SQL download instru (can reference [https://www.jianshu.com/p/694d7d0a170b])
+1. sudo apt install mysql-client-core-8.0     # version 8.0.25-0ubuntu0.20.04.1, or
+    sudo apt install mariadb-client-core-10.3  # version 1:10.3.29-0ubuntu0.20.04.1
+2. sudo apt-get install mysql-server
+3. (create user for remote access) CREATE USER 'admin'@'%' IDENTIFIED BY '';
+4. (set previlege) GRANT ALL privileges ON *.* TO 'admin'@'%' WITH GRANT OPTION;
+    a. (change password) SET PASSWORD FOR 'username'@'host' = PASSWORD('newpassword');
+    b. (delete user) DROP USER 'username'@'host';
+5. flush privileges;
+6. (if previous not working!!) 修改 /etc/percona-server.conf.d 目录下的 mysqld.cnf  文件 -> 注释掉 “bind 127.0.0.1” -> 去掉 “bind-address = 0.0.0.0” 这行的注释
+最后重启mysql: service mysql restart
+
+#### frontend setup
+(basic set up in )  [https://auth0.com/blog/building-modern-applications-with-django-and-vuejs/]
+(don't need this step) npm install --save axios
+
+## 服务管理
+# 启动
+sudo service mysql start
+# 停止
+sudo service mysql stop
+# 服务状态
+sudo service mysql status
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
+1.  all repeated subject will only choose and create the first one
+2.  everytime put it into a new server, unquote some code in views.py to create local database
 3.  xxxx
 
 #### 参与贡献
